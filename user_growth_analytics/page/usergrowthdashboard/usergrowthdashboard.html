@@ -1,0 +1,27 @@
+{% extends "templates/base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+  <!-- 顶部 KPI 卡片 -->
+  <header class="dashboard-header">
+    <h1 class="dashboard-title">⚡ 用户增长指挥中心</h1>
+    <div class="kpi-row">
+      <div class="kpi-card"><div class="kpi-label">活跃用户</div><div class="kpi-value" id="kpi-active">--</div></div>
+      <div class="kpi-card"><div class="kpi-label">流失用户</div><div class="kpi-value" id="kpi-churned">--</div></div>
+      <div class="kpi-card"><div class="kpi-label">总 MRR</div><div class="kpi-value" id="kpi-arr">--</div></div>
+      <div class="kpi-card"><div class="kpi-label">留存率</div><div class="kpi-value" id="kpi-retention">--</div></div>
+    </div>
+  </header>
+
+  <!-- 图表区 -->
+  <main class="dashboard-grid">
+    <section class="chart-block"><h3>📈 增长与流失趋势</h3><div id="chart-trend" class="chart-area"></div></section>
+    <section class="chart-block"><h3>🌍 用户地理分布</h3><div id="chart-region" class="chart-area"></div></section>
+    <section class="chart-block"><h3>🎯 套餐分布</h3><div id="chart-tier" class="chart-area"></div></section>
+    <section class="chart-block"><h3>📊 渠道贡献</h3><div id="chart-channel" class="chart-area"></div></section>
+    <section class="chart-block chart-block-wide"><h3>🔄 用户生命周期漏斗</h3><div id="chart-funnel" class="chart-area"></div></section>
+    <section class="chart-block"><h3>💔 流失原因分布</h3><div id="chart-churn-reason" class="chart-area"></div></section>
+    <section class="chart-block chart-block-wide"><h3>🕒 实时事件流</h3><div id="event-feed" class="event-feed"></div></section>
+  </main>
+</div>
+{% endblock %}

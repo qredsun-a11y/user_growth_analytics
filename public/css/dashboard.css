@@ -1,0 +1,54 @@
+body { margin: 0; background: #0a0e27; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+.dashboard-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f4e 100%);
+}
+
+.dashboard-header { margin-bottom: 24px; }
+.dashboard-title { font-size: 28px; margin: 0 0 16px; color: #5eead4; text-shadow: 0 0 20px rgba(94,234,212,.5); }
+
+.kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.kpi-card { background: rgba(15,23,42,.6); border: 1px solid rgba(94,234,212,.3); border-radius: 12px; padding: 16px; text-align: center; backdrop-filter: blur(10px); }
+.kpi-label { font-size: 13px; color: #94a3b8; margin-bottom: 8px; }
+.kpi-value { font-size: 28px; font-weight: bold; color: #5eead4; text-shadow: 0 0 10px rgba(94,234,212,.5); }
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.chart-block {
+  background: rgba(15,23,42,.6);
+  border: 1px solid rgba(94,234,212,.2);
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 280px;
+}
+.chart-block-wide { grid-column: span 2; }
+.chart-block h3 { margin: 0 0 12px; font-size: 16px; color: #cbd5e1; }
+.chart-area { width: 100%; height: 240px; }
+
+.event-feed {
+  height: 240px;
+  overflow-y: auto;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+.event-feed .feed-item { padding: 8px 0; border-bottom: 1px dashed rgba(94,234,212,.2); animation: fadeIn .6s ease; }
+.feed-item .feed-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-size: 12px; }
+.feed-tag.tag-active { background: rgba(34,197,94,.2); color: #22c55e; }
+.feed-tag.tag-churn { background: rgba(239,68,68,.2); color: #ef4444; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+  .chart-block-wide { grid-column: span 2; }
+}
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+}

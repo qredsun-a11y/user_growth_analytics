@@ -1,0 +1,9 @@
+{
+  "doctype": "Report",
+  "name": "User Growth Report",
+  "report_name": "User Growth Report",
+  "ref_doctype": "User Lifecycle Event",
+  "report_type": "Script Report",
+  "module": "User Growth Analytics",
+  "is_standard": "Yes"
+}

@@ -1,0 +1,97 @@
+{
+  "doctype": "DocType",
+  "name": "User Service Record",
+  "module": "User Growth Analytics",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "user_name",
+      "label": "用户姓名",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "user_email",
+      "label": "邮箱",
+      "fieldtype": "Data",
+      "options": "Email"
+    },
+    {
+      "fieldname": "company",
+      "label": "所属企业",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "服务状态",
+      "fieldtype": "Select",
+      "options": "Active\nChurned\nPending\nExpired",
+      "default": "Active",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_type",
+      "label": "事件类型",
+      "fieldtype": "Select",
+      "options": "Activation\nRenewal\nUpgrade\nChurn",
+      "default": "Activation",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_date",
+      "label": "事件日期",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "channel",
+      "label": "获客渠道",
+      "fieldtype": "Select",
+      "options": "Direct\nMarketing Campaign\nPartner\nReferral\nSEO\nSocial Media",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "subscription_tier",
+      "label": "套餐等级",
+      "fieldtype": "Select",
+      "options": "Free\nStandard\nEnterprise",
+      "default": "Standard"
+    },
+    {
+      "fieldname": "arr",
+      "label": "年度经常性收入",
+      "fieldtype": "Currency",
+      "default": "0"
+    },
+    {
+      "fieldname": "region",
+      "label": "所在地区",
+      "fieldtype": "Select",
+      "options": "北京\n上海\n广州\n深圳\n杭州\n成都\n武汉\n其他"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "All",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    }
+  ],
+  "sort_field": "event_date",
+  "sort_order": "DESC"
+}

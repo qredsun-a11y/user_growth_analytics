@@ -1,0 +1,117 @@
+{
+  "doctype": "DocType",
+  "name": "User Lifecycle Event",
+  "module": "User Growth Analytics",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "naming_series": "EVT-.YYYY.-.####",
+  "title_field": "event_type",
+  "fields": [
+    {
+      "fieldname": "event_type",
+      "label": "事件类型",
+      "fieldtype": "Select",
+      "options": "Onboarding\nChurn",
+      "reqd": 1,
+      "default": "Onboarding",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_date",
+      "label": "事件日期",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "customer",
+      "label": "客户",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "customer_name",
+      "label": "客户名称",
+      "fieldtype": "Data",
+      "fetch_from": "customer.customer_name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "region",
+      "label": "所属区域",
+      "fieldtype": "Select",
+      "options": "华北\n华东\n华南\n华中\n西南\n西北\n东北\n海外",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "channel",
+      "label": "获客渠道",
+      "fieldtype": "Select",
+      "options": "自然流量\n付费投放\n渠道代理\n口碑推荐\n线下活动\n其他",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plan",
+      "label": "服务套餐",
+      "fieldtype": "Select",
+      "options": "免费\n基础\n专业\n企业",
+      "reqd": 1,
+      "default": "基础",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "mrr",
+      "label": "月费金额 (¥)",
+      "fieldtype": "Currency",
+      "reqd": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "related_onboarding",
+      "label": "关联开通单",
+      "fieldtype": "Link",
+      "options": "User Lifecycle Event",
+      "depends_on": "eval:doc.event_type==='Churn'",
+      "mandatory_depends_on": "eval:doc.event_type==='Churn'",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "churn_reason",
+      "label": "流失原因",
+      "fieldtype": "Select",
+      "options": "价格\n竞品\n产品不满足\n服务问题\n公司关闭\n其他",
+      "depends_on": "eval:doc.event_type==='Churn'",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "备注",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Analytics User",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    }
+  ],
+  "sort_field": "event_date",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

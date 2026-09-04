@@ -1,0 +1,11 @@
+[project]
+name = "user_growth_analytics"
+authors = [{ name = "Your Company" }]
+description = "User Growth Analytics - 用户增长与流失分析演示 App"
+requires-python = ">=3.10"
+dependencies = [
+    "frappe>=15.0.0,<16.0.0"
+]
+
+[tool.setuptools]
+include-package-data = true

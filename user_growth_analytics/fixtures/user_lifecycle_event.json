@@ -1,0 +1,64 @@
+[
+  {
+    "doctype": "User Lifecycle Event",
+    "name": "EVT-2025-10-01-0001",
+    "event_type": "Onboarding",
+    "event_date": "2025-10-01",
+    "customer": "CUST-00001",
+    "region": "华东",
+    "channel": "自然流量",
+    "plan": "基础",
+    "mrr": 299,
+    "notes": "种子数据：首批种子用户"
+  },
+  {
+    "doctype": "User Lifecycle Event",
+    "name": "EVT-2025-10-15-0002",
+    "event_type": "Onboarding",
+    "event_date": "2025-10-15",
+    "customer": "CUST-00002",
+    "region": "华北",
+    "channel": "付费投放",
+    "plan": "企业",
+    "mrr": 2999,
+    "notes": "种子数据：大客户签约"
+  },
+  {
+    "doctype": "User Lifecycle Event",
+    "name": "EVT-2025-11-20-0003",
+    "event_type": "Churn",
+    "event_date": "2025-11-20",
+    "customer": "CUST-00003",
+    "region": "华南",
+    "channel": "渠道代理",
+    "plan": "专业",
+    "mrr": 999,
+    "related_onboarding": "EVT-2025-10-01-0001",
+    "churn_reason": "价格",
+    "notes": "种子数据：价格敏感流失"
+  },
+  {
+    "doctype": "User Lifecycle Event",
+    "name": "EVT-2025-12-01-0004",
+    "event_type": "Onboarding",
+    "event_date": "2025-12-01",
+    "customer": "CUST-00004",
+    "region": "华中",
+    "channel": "口碑推荐",
+    "plan": "免费",
+    "mrr": 0,
+    "notes": "种子数据：免费用户"
+  },
+  {
+    "doctype": "User Lifecycle Event",
+    "name": "EVT-2026-01-10-0005",
+    "event_type": "Onboarding",
+    "event_date": "2026-01-10",
+    "customer": "CUST-00005",
+    "region": "西南",
+    "channel": "线下活动",
+    "plan": "专业",
+    "mrr": 999,
+    "notes": "种子数据：线下活动获客"
+  }
+]
